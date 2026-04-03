@@ -40,6 +40,7 @@
         <message/>
         <message_html><![CDATA[<p>Dear ${requested_for},</p>
 <p>Your allocated ${cmdb_ci} (${item_type}) is awaiting collection at ${depot}/${other} for use sole at ${location_to_be_used} for ${short_description}.</p>
+<p>${mail_script:x_cdltd_loaner_r_0_loaner_request_script_1}</p>
 <p>This reservation begins at ${start_date}.</p>
 <p>Please return the ${item_type} to (${depot}/${other}) by ${end_date}.</p>
 <p>Reminder emails will be sent.</p>]]></message_html>
@@ -64,7 +65,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cf363f0d154003107f44bb61ebff0d12</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Loaner item pick up</sys_name>
         <sys_overrides/>
         <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">f80c9ab4e80003107f44afddb2945997</sys_package>
@@ -72,7 +73,7 @@
         <sys_scope display_value="Loaner Request">f80c9ab4e80003107f44afddb2945997</sys_scope>
         <sys_update_name>sysevent_email_action_cf363f0d154003107f44bb61ebff0d12</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-04-03 09:54:43</sys_updated_on>
+        <sys_updated_on>2026-04-03 14:30:11</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
