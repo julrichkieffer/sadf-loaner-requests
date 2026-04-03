@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="bf9e1e38e80003107f44afddb29459bb" extends="task" label="Loaner Request" max_length="40" name="x_cdltd_loaner_r_0_loaner_request" type="collection">
+        <element default="0" function_definition="0" label="Overdue count" max_length="255" name="overdue_count" read_only="true" type="integer"/>
+        <element label="Return reminder" max_length="255" name="return_reminder" type="glide_date_time"/>
+        <element label="Overdue reminder" max_length="255" name="last_overdue_reminder" type="glide_date_time"/>
         <element label="Location to be used" max_length="40" name="location_to_be_used" type="string"/>
         <element label="Start date" mandatory="true" max_length="255" name="start_date" type="glide_date_time"/>
         <element label="End date" mandatory="true" max_length="255" name="end_date" type="glide_date_time"/>
+        <element label="Collection reminder" max_length="255" name="pick_up_reminder" type="glide_date_time"/>
         <element choice="3" default="sc" label="Depot" max_length="40" name="depot" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Buenos Aires" sequence="2" value="ba"/>
