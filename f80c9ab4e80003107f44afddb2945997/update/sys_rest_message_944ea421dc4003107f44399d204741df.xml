@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+    <sys_rest_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type>no_authentication</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description>Convert a (string) location to coordinates (latitude + longitude) for use in Maps</description>
+        <name>Location to Lat &amp; Long</name>
+        <oauth2_profile/>
+        <protocol_name/>
+        <rest_endpoint>https://api.geoapify.com/v1/geocode/search</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-04-04 08:27:55</sys_created_on>
+        <sys_id>944ea421dc4003107f44399d204741df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Location to Lat &amp; Long</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">f80c9ab4e80003107f44afddb2945997</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">f80c9ab4e80003107f44afddb2945997</sys_scope>
+        <sys_update_name>sys_rest_message_944ea421dc4003107f44399d204741df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-04-04 08:27:55</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+</record_update>

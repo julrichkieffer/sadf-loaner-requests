@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>text</name>
+        <rest_message_function display_value="Default GET">1bde2821dc4003107f44399d204741a2</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-04-04 08:30:36</sys_created_on>
+        <sys_id>f95f2461dc4003107f44399d204741d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">f80c9ab4e80003107f44afddb2945997</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">f80c9ab4e80003107f44afddb2945997</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_f95f2461dc4003107f44399d204741d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-04-04 08:30:36</sys_updated_on>
+        <type>string</type>
+        <value>Cape Town, South Africa</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

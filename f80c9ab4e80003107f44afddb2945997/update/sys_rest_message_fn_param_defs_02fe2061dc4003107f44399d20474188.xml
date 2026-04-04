@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_param_defs">
+    <sys_rest_message_fn_param_defs action="INSERT_OR_UPDATE">
+        <name>apiKey</name>
+        <order>100</order>
+        <rest_message_function display_value="Default GET">1bde2821dc4003107f44399d204741a2</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_param_defs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-04-04 08:29:37</sys_created_on>
+        <sys_id>02fe2061dc4003107f44399d20474188</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>apiKey</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">f80c9ab4e80003107f44afddb2945997</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">f80c9ab4e80003107f44afddb2945997</sys_scope>
+        <sys_update_name>sys_rest_message_fn_param_defs_02fe2061dc4003107f44399d20474188</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-04-04 08:29:37</sys_updated_on>
+        <value>9ea98076255340c7b885935fef831328</value>
+    </sys_rest_message_fn_param_defs>
+</record_update>

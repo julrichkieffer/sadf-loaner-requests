@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmn_map_page">
+    <cmn_map_page action="INSERT_OR_UPDATE">
+        <center_address>London, UK</center_address>
+        <center_latitude/>
+        <center_longitude/>
+        <controls_size>small</controls_size>
+        <coordinates_retrieved_on/>
+        <disable_map_controls/>
+        <disable_nav_bar>false</disable_nav_bar>
+        <filter/>
+        <initial_zoom>2</initial_zoom>
+        <name>x_cdltd_loaner_r_0_Requested For Locatio</name>
+        <overview>false</overview>
+        <refresh_on_zoom>false</refresh_on_zoom>
+        <roles/>
+        <script><![CDATA[// Fetch active Loaner Requests where Requested For has both city and country populated
+const gr = new GlideRecord('x_cdltd_loaner_r_0_loaner_request');
+gr.addEncodedQuery("active=true^requested_for.cityISNOTEMPTY^requested_for.countryISNOTEMPTY");
+gr.orderBy('number');
+gr.query();
+
+while (gr.next()) {
+    let location = gr.requested_for.city;
+
+    // As country is a choice list, fetch the corresponding label
+    const grCountry = new GlideRecord('sys_choice');
+    grCountry.addQuery('name', 'sys_user');
+    grCountry.addQuery('element', 'country');
+    grCountry.addQuery('language', 'en');
+    grCountry.addQuery('value', gr.requested_for.country);
+    grCountry.query();
+
+    if (grCountry.next()) location = gr.requested_for.city + ", " + grCountry.label;
+    gs.debug('Requested For Locations: location = ' + location);
+
+    try {
+        const r = new sn_ws.RESTMessageV2('x_cdltd_loaner_r_0.Location to Lat & Long', 'Default GET');
+        // r.setStringParameterNoEscape('text', 'Cape Town, South Africa');
+        r.setStringParameterNoEscape('text', location);
+
+        const response = r.execute();
+        const httpStatus = response.getStatusCode();
+        gs.debug('Requested For Locations: httpStatus = ' + httpStatus);
+        if (200 <= httpStatus && httpStatus < 300) {
+            // Extract latitude and longitude values from REST Message response in JSON format
+            const responseBody = response.getBody();
+            gs.debug('Requested For Locations: responseBody = ' + responseBody);
+            const responseJSON = JSON.parse(responseBody);
+            const { lat, lon } = responseJSON.features[0].properties;
+            gs.info('Requested For Locations: location -> lat, lon = ' + location + ' -> ' + lat + ', ' + lon);
+
+            // Plot each Location Request by Requested For's city -> coordinates
+            const plot = map.addItem(gr);
+            plot.latitude = '' + lat;
+            plot.longitude = '' + lon;
+            plot.dialog_title = gr.getDisplayValue();
+            plot.icon = "https://maps.google.com/mapfiles/ms/micons/yellow.png";
+            plot.icon_width = "32";
+            plot.icon_height = "32";
+        }
+    } catch (xp) {
+        gs.error('Requested For Locations: ' + xp);
+    }
+}]]></script>
+        <show_device_location>true</show_device_location>
+        <suffix>Requested For Locations</suffix>
+        <sys_class_name>cmn_map_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-04-04 08:49:09</sys_created_on>
+        <sys_id>46623025dc4003107f44399d204741db</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>x_cdltd_loaner_r_0_Requested For Locatio</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_r_0">f80c9ab4e80003107f44afddb2945997</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">f80c9ab4e80003107f44afddb2945997</sys_scope>
+        <sys_update_name>cmn_map_page_46623025dc4003107f44399d204741db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-04-04 10:27:26</sys_updated_on>
+        <type>terrain</type>
+        <type_selection>buttons</type_selection>
+        <use_advanced_configuration>false</use_advanced_configuration>
+    </cmn_map_page>
+</record_update>
